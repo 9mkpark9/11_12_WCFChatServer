@@ -49,9 +49,9 @@ namespace _11_12_WCFChatServer
                 int index = Chatter.IndexOf(nickname);
                 if (index != -1)
                 {
+                    BroadcastMessage("Leave[퇴장]", nickname, $"{nickname}님이 퇴장하셨습니다.", time);
                     Chatter.RemoveAt(index);
                     Callbacks.RemoveAt(index); // 콜백 제거
-                    BroadcastMessage("Leave[퇴장]", nickname, $"{nickname}님이 퇴장하셨습니다.", time);
                 }
             }
         }
